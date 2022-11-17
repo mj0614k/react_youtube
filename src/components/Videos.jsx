@@ -1,38 +1,13 @@
 import React from 'react'
+import {VideoCard, Loader} from "./"
 
-const Videos = () => {
+const Videos = ({videos}) => {
+  if (!videos?.length) return <Loader />
   return (
     <article className="videos__inner">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      {videos.map((item, index) => (
+          <VideoCard key={index} video={item}/>
+      ))}
     </article>
   )
 }
